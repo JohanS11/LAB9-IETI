@@ -1,6 +1,33 @@
 # 2.3 JPA with MongoDB
 Create a Spring Boot Application that connects with MongoDB.
 
+# ANSWERS LABORATORY
+
+* How many customers were created in the database?
+
+  Five customers
+  
+* Where is the findAll method implemented?
+
+   This method is implemented by default on the Spring Repository (i.e is not implement explicit)
+   
+* Suppose you have more than 1000 products in your database. How would you implement a method for supporting pagination and return pages of 50 products to your frontend?
+   
+   productRepository.findBy(PageRequest.of(0, 50))
+   
+* How many products contain the "plus" word in their description?
+
+   Four products
+   
+* How many products are returned by the findByDescriptionContaining query? Why?
+   
+   Two products, the method returns only two because there is a pagination and return pages of 2 products
+   
+* Which are the collection names where the objects are stored? Where are those names assigned?
+   
+  Customer and Product, the names are assigned by default unless we specify it with the annotation @Document(collection = "name")  
+   
+
 ## Part 1: Basic Mongo DB configuration and Spring Boot Integration
 1. Create a MongoDB Atlas account on [https://www.mongodb.com/atlas-signup-from-mlab](https://www.mongodb.com/atlas-signup-from-mlab):
 
